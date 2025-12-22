@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Plant Disease Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌿 Plant Disease Detection</h1>
+        <p class="subtitle">Upload a plant leaf image to detect diseases and get treatment suggestions.</p>
+
+        <div class="card">
+            <form action="/" method="post" enctype="multipart/form-data">
+                <div class="upload-box">
+                    <input type="file" name="file" id="file" accept="image/*" required onchange="previewImage(event)">
+                    <label for="file" class="upload-label">
+                        <span id="file-name">Choose an Image</span>
+                    </label>
+                </div>
+                <img id="preview" src="#" alt="Image Preview" style="display:none;">
+                <button type="submit" class="btn">🔍 Predict Disease</button>
+            </form>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+
+        {% if disease %}
+        <div class="result-card">
+            <h2>Prediction Results</h2>
+            <div class="result-header">
+                <div class="result-image">
+                    <img src="{{ image_url }}" alt="Uploaded Leaf">
+                </div>
+                <div class="result-summary">
+                    <p><strong>Disease:</strong> <span class="highlight">{{ disease }}</span></p>
+                    <p><strong>Confidence:</strong> {{ confidence }}</p>
+                </div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-box">
+                    <h3>🤒 Symptoms</h3>
+                    <p>{{ symptoms }}</p>
+                </div>
+                <div class="detail-box">
+                    <h3>🦠 Causes</h3>
+                    <p>{{ causes }}</p>
+                </div>
+                <div class="detail-box">
+                    <h3>💊 Treatment</h3>
+                    <p>{{ treatment }}</p>
+                </div>
+                <div class="detail-box">
+                    <h3>🛡️ Prevention</h3>
+                    <p>{{ prevention }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('preview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+            document.getElementById('file-name').innerText = event.target.files[0].name;
+        }
+    </script>
+</body>
+</html>
