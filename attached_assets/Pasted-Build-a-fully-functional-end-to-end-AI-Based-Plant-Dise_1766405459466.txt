@@ -1,0 +1,164 @@
+Build a fully functional, end-to-end AI-Based Plant Disease Detection System that works correctly in Replit without any broken features or missing integrations.
+
+The system must allow users to upload a plant leaf image, perform AI-based disease classification using a trained deep learning model, and display accurate disease details along with treatment suggestions.
+
+The project must be production-ready, beginner-safe, and error-free.
+
+========================
+PROJECT OBJECTIVES
+========================
+
+1. Develop a deep learning image classification model to detect plant leaf diseases.
+2. Classify images into healthy or diseased categories.
+3. Display disease name, confidence score, symptoms, causes, and treatment suggestions.
+4. Provide a clean, responsive web interface.
+5. Ensure all backend, frontend, and ML components are fully integrated and working.
+
+========================
+TECH STACK (MANDATORY)
+========================
+
+Machine Learning:
+- Python
+- TensorFlow / Keras
+- NumPy
+- OpenCV
+- Pillow
+
+Backend:
+- Flask
+
+Frontend:
+- HTML
+- CSS
+- JavaScript (optional but allowed)
+
+Deployment:
+- Replit (application must run immediately on clicking Run)
+
+Dataset:
+- PlantVillage Dataset (assume model is already trained)
+
+========================
+PROJECT STRUCTURE (STRICT)
+========================
+
+/
+├── app.py
+├── requirements.txt
+├── plant_disease_model.h5   (pre-trained model, already present)
+├── class_labels.json        (maps class index → disease name)
+├── disease_info.json        (symptoms, causes, treatment, prevention)
+├── templates/
+│   └── index.html
+├── static/
+│   ├── uploads/
+│   └── style.css
+
+========================
+BACKEND REQUIREMENTS (app.py)
+========================
+
+- Create a Flask app with proper configuration
+- Load CNN / Transfer Learning model from "plant_disease_model.h5"
+- Load disease labels from class_labels.json
+- Load disease details from disease_info.json
+- Accept image upload from frontend
+- Validate uploaded file type (jpg, jpeg, png only)
+- Save uploaded image to static/uploads/
+- Preprocess image:
+  - Resize to 224x224
+  - Convert to RGB
+  - Normalize pixel values
+  - Expand dimensions for model input
+- Perform prediction using model.predict()
+- Extract:
+  - Disease name
+  - Confidence score (percentage)
+- Fetch disease details:
+  - Symptoms
+  - Causes
+  - Treatment
+  - Prevention tips
+- Pass all results to frontend using Flask Jinja
+- Handle errors gracefully (no crashes)
+- Run Flask server on:
+  host = 0.0.0.0
+  port = 3000
+  debug = True
+
+========================
+FRONTEND REQUIREMENTS (index.html)
+========================
+
+- Title: "AI-Based Plant Disease Detection System"
+- Centered card layout
+- Light green background
+- White card with rounded corners and shadow
+- Image upload input
+- Predict button
+- Preview uploaded image
+- Display results:
+  - Disease name
+  - Confidence score
+  - Symptoms
+  - Causes
+  - Treatment
+  - Prevention
+- Responsive design
+- Clear success/error messages
+
+========================
+FEATURES (ALL MUST WORK)
+========================
+
+1. 🌿 Image Upload
+   - Upload plant leaf image successfully
+
+2. 🤖 Disease Prediction
+   - Correct disease classification
+   - Show confidence score
+
+3. 💊 Cure & Treatment Suggestions
+   - Display detailed disease information dynamically
+
+4. 📊 Model Performance (Optional UI Section)
+   - Show accuracy text (static or dynamic)
+
+5. 🖥️ Deployment Ready
+   - Runs correctly in Replit
+   - No missing imports
+   - No file path issues
+   - No runtime errors
+
+========================
+REQUIREMENTS.TXT
+========================
+
+Include only:
+- flask
+- tensorflow
+- numpy
+- pillow
+- opencv-python
+
+========================
+OUTPUT INSTRUCTIONS
+========================
+
+Generate FULL, COMPLETE, WORKING CODE for:
+- app.py
+- requirements.txt
+- templates/index.html
+- static/style.css
+- class_labels.json
+- disease_info.json
+
+The application MUST:
+- Run successfully in Replit
+- Show predictions correctly
+- Display disease information correctly
+- Have zero broken functionality
+
+Do NOT explain anything.
+Only generate clean, production-ready code.
