@@ -34,14 +34,29 @@
         <div class="result-card">
             <h2>Prediction Results</h2>
             
-            <div class="result-header">
-                <div class="disease-alert">
+            <div class="result-main">
+                <div class="image-box">
+                    <img src="{{ image_url }}" alt="Uploaded Leaf">
+                </div>
+                
+                <div class="result-details">
                     <h3 class="disease-name">{{ disease }}</h3>
-                    <div class="confidence-container">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: {{ confidence_value }}%; background-color: {% if confidence_value >= 80 %}#4caf50{% elif confidence_value >= 60 %}#ff9800{% else %}#d32f2f{% endif %};"></div>
+                    
+                    <div class="confidence-item">
+                        <label>Confidence:</label>
+                        <div class="confidence-wrapper">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: {{ confidence_value }}%; background: {% if confidence_value >= 80 %}linear-gradient(to right, #38a169, #2f855a){% elif confidence_value >= 60 %}linear-gradient(to right, #ff9800, #f57c00){% else %}linear-gradient(to right, #d32f2f, #c62828){% endif %};"></div>
+                            </div>
+                            <span class="confidence-percent">{{ confidence }}</span>
                         </div>
-                        <p class="confidence-text">{{ confidence }}</p>
+                    </div>
+                    
+                    <div class="severity-item">
+                        <label>Severity:</label>
+                        <span class="severity {% if confidence_value >= 80 %}high{% elif confidence_value >= 60 %}medium{% else %}low{% endif %}">
+                            {% if confidence_value >= 80 %}High{% elif confidence_value >= 60 %}Medium{% else %}Low{% endif %}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -58,43 +73,21 @@
                 </div>
             </div>
 
-            <div class="images-section">
-                <div class="image-container">
-                    <h4>Original Image</h4>
-                    <img src="{{ image_url }}" alt="Uploaded Leaf" class="leaf-image">
-                </div>
-                <div class="image-container">
-                    <h4>Preprocessed (224x224)</h4>
-                    <img src="{{ image_url }}" alt="Preprocessed Leaf" class="leaf-image preprocessed">
-                </div>
-            </div>
-
-            <div class="severity-section">
-                <div class="severity-badge {% if confidence_value >= 80 %}severe{% elif confidence_value >= 60 %}moderate{% else %}mild{% endif %}">
-                    <p class="severity-label">Severity Level</p>
-                    <p class="severity-value">{% if confidence_value >= 80 %}High{% elif confidence_value >= 60 %}Medium{% else %}Low{% endif %}</p>
-                </div>
-                <div class="recommendation">
-                    <p class="rec-title">Action Required</p>
-                    <p class="rec-text">{% if confidence_value >= 80 %}Immediate treatment recommended{% elif confidence_value >= 60 %}Monitor plant for next 7 days{% else %}Continue regular monitoring{% endif %}</p>
-                </div>
-            </div>
-
             <div class="details-grid">
-                <div class="detail-box">
-                    <h3>⚕️ Symptoms</h3>
+                <div class="card">
+                    <h4>Symptoms</h4>
                     <p>{{ symptoms }}</p>
                 </div>
-                <div class="detail-box">
-                    <h3>🔬 Causes</h3>
+                <div class="card">
+                    <h4>Causes</h4>
                     <p>{{ causes }}</p>
                 </div>
-                <div class="detail-box">
-                    <h3>💉 Treatment</h3>
+                <div class="card">
+                    <h4>Treatment</h4>
                     <p>{{ treatment }}</p>
                 </div>
-                <div class="detail-box">
-                    <h3>🛡️ Prevention</h3>
+                <div class="card">
+                    <h4>Prevention</h4>
                     <p>{{ prevention }}</p>
                 </div>
             </div>

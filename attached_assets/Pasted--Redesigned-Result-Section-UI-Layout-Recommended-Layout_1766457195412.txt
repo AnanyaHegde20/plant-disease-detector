@@ -1,0 +1,196 @@
+ Redesigned Result Section – UI Layout (Recommended)
+
+### 🔷 Layout Structure (Professional)
+
+
+-------------------------------------
+|  Prediction Results               |
+-------------------------------------
+| [ Leaf Image ]   Disease Details  |
+|                  - Disease Name   |
+|                  - Confidence     |
+|                  - Severity       |
+-------------------------------------
+|  Model Info (Card)                |
+|  Symptoms | Causes                |
+|  Treatment | Prevention           |
+-------------------------------------
+
+
+This layout:
+✔ Looks clean
+✔ Shows ML + domain knowledge
+✔ Easy for HR & interviewer to scan
+
+---
+
+## 2️⃣ HTML STRUCTURE (Result Section)
+
+html
+<div class="result-container">
+  <h2>Prediction Results</h2>
+
+  <div class="result-main">
+    <div class="image-box">
+      <img src="{{ image_url }}" alt="Uploaded Leaf">
+    </div>
+
+    <div class="result-details">
+      <h3 class="disease-name">Rust</h3>
+
+      <div class="confidence">
+        Confidence: <span>91.66%</span>
+      </div>
+
+      <div class="severity high">Severity: High</div>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="card">
+      <h4>Symptoms</h4>
+      <p>Orange, yellow, or brown pustules on leaf underside.</p>
+    </div>
+
+    <div class="card">
+      <h4>Causes</h4>
+      <p>Fungal infection in moist conditions.</p>
+    </div>
+
+    <div class="card">
+      <h4>Treatment</h4>
+      <p>Remove infected leaves. Apply copper fungicide.</p>
+    </div>
+
+    <div class="card">
+      <h4>Prevention</h4>
+      <p>Avoid wet leaves. Ensure good air circulation.</p>
+    </div>
+  </div>
+</div>
+
+
+---
+
+## 3️⃣ MODERN CSS FOR RESULT SECTION (Resume-Grade)
+
+css
+.result-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.result-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2f855a;
+}
+
+.result-main {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-box img {
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  border: 3px solid #38a169;
+  object-fit: cover;
+}
+
+.result-details {
+  flex: 1;
+}
+
+.disease-name {
+  font-size: 26px;
+  color: #22543d;
+  margin-bottom: 10px;
+}
+
+.confidence span {
+  font-weight: bold;
+  color: #38a169;
+}
+
+.severity {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.severity.high {
+  color: #e53e3e;
+}
+
+.severity.medium {
+  color: #dd6b20;
+}
+
+.severity.low {
+  color: #38a169;
+}
+
+/* Info Cards */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #f7fafc;
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 5px solid #38a169;
+}
+
+.card h4 {
+  margin-bottom: 8px;
+  color: #2f855a;
+}
+
+
+---
+
+## 4️⃣ OPTIONAL: Confidence Progress Bar (Highly Recommended)
+
+html
+<div class="progress-bar">
+  <div class="progress" style="width:91%"></div>
+</div>
+
+
+css
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(to right, #38a169, #2f855a);
+  border-radius: 10px;
+}
+
+
+🔥 This screams *ML project maturity*.
+
+---
+
+## 5️⃣ Why This Looks GREAT on Resume
+
+Recruiter sees:
+✔ Clean UI
+✔ Real ML confidence score
+✔ Practical agriculture use case
+✔ End-to-end thinking (not just model)
