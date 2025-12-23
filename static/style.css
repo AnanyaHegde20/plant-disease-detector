@@ -1,38 +1,63 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #e8f5e9;
+    background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
     color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
 }
 
 .container {
     width: 90%;
-    max-width: 800px;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
+}
+
+.header-section {
+    margin-bottom: 40px;
+}
+
+.logo-badge {
+    display: inline-block;
+    background: #c8e6c9;
+    color: #1b5e20;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 25px;
 }
 
 h1 {
-    color: #2e7d32;
-    margin-bottom: 10px;
+    color: #1a3a2a;
+    margin: 0 0 20px 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.highlight-green {
+    color: #38a169;
 }
 
 .subtitle {
-    color: #555;
-    margin-bottom: 30px;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card {
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
 }
 
 .upload-box {
@@ -44,17 +69,20 @@ input[type="file"] {
 }
 
 .upload-label {
-    background-color: #4caf50;
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
     color: white;
-    padding: 12px 25px;
+    padding: 14px 32px;
     border-radius: 50px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
     display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3);
 }
 
 .upload-label:hover {
-    background-color: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(56, 161, 105, 0.4);
 }
 
 #preview {
@@ -66,19 +94,22 @@ input[type="file"] {
 }
 
 .btn {
-    background-color: #2e7d32;
+    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
     color: white;
     border: none;
-    padding: 12px 30px;
-    border-radius: 5px;
+    padding: 14px 40px;
+    border-radius: 50px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 10px;
+    transition: all 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3);
 }
 
 .btn:hover {
-    background-color: #1b5e20;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(56, 161, 105, 0.4);
 }
 
 .error {
@@ -89,16 +120,18 @@ input[type="file"] {
 .result-card {
     background: white;
     border-radius: 16px;
-    padding: 25px;
-    margin-top: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     animation: fadeIn 0.5s ease-in-out;
 }
 
 .result-card h2 {
     text-align: center;
-    margin-bottom: 25px;
-    color: #2f855a;
+    margin-bottom: 35px;
+    color: #1a3a2a;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 @keyframes fadeIn {
@@ -131,8 +164,8 @@ input[type="file"] {
 
 .disease-name {
     margin: 0 0 20px 0;
-    font-size: 28px;
-    color: #22543d;
+    font-size: 32px;
+    color: #1a3a2a;
     font-weight: 700;
 }
 
@@ -252,17 +285,17 @@ input[type="file"] {
 }
 
 .card h4 {
-    margin: 0 0 8px 0;
-    color: #2f855a;
-    font-size: 15px;
-    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #1b5e20;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .card p {
     margin: 0;
     font-size: 14px;
-    color: #4a5568;
-    line-height: 1.5;
+    color: #555;
+    line-height: 1.6;
 }
 
 .footer-info {
