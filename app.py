@@ -78,6 +78,7 @@ def index():
                                    image_url=filepath,
                                    disease=disease_name,
                                    confidence=f"{confidence:.2f}%",
+                                   accuracy=details.get('accuracy', 'N/A'),
                                    symptoms=details.get('symptoms', 'N/A'),
                                    causes=details.get('causes', 'N/A'),
                                    treatment=details.get('treatment', 'N/A'),

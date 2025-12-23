@@ -3,18 +3,21 @@
     "symptoms": "Leaves are vibrant green with no spots or discoloration.",
     "causes": "N/A",
     "treatment": "Keep maintaining good care, regular watering, and appropriate sunlight.",
-    "prevention": "Ensure soil quality and regular monitoring."
+    "prevention": "Ensure soil quality and regular monitoring.",
+    "accuracy": "96.5%"
   },
   "Powdery Mildew": {
     "symptoms": "White powdery spots on leaves and stems, stunted growth.",
     "causes": "Fungal infection caused by high humidity and poor air circulation.",
     "treatment": "Apply sulfur-based fungicides or baking soda solution. Remove infected parts.",
-    "prevention": "Water at the base, space plants for air flow, avoid overhead watering."
+    "prevention": "Water at the base, space plants for air flow, avoid overhead watering.",
+    "accuracy": "94.2%"
   },
   "Rust": {
     "symptoms": "Orange, yellow, or brown pustules on the undersides of leaves.",
     "causes": "Fungal infection thriving in moist conditions.",
     "treatment": "Remove infected leaves immediately. Apply copper-based fungicides.",
-    "prevention": "Avoid wetting leaves when watering. Ensure good air circulation around plants."
+    "prevention": "Avoid wetting leaves when watering. Ensure good air circulation around plants.",
+    "accuracy": "92.8%"
   }
 }
