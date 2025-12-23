@@ -4,6 +4,7 @@ import numpy as np
 from flask import Flask, render_template, request
 from PIL import Image
 import tensorflow as tf
+from datetime import datetime
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
@@ -73,16 +74,19 @@ def index():
             
             disease_name, confidence = predict_disease(filepath)
             details = disease_info.get(disease_name, {})
+            timestamp = datetime.now().strftime("%d %b %Y, %H:%M:%S")
             
             return render_template('index.html', 
                                    image_url=filepath,
                                    disease=disease_name,
                                    confidence=f"{confidence:.2f}%",
+                                   confidence_value=int(confidence),
                                    accuracy=details.get('accuracy', 'N/A'),
                                    symptoms=details.get('symptoms', 'N/A'),
                                    causes=details.get('causes', 'N/A'),
                                    treatment=details.get('treatment', 'N/A'),
-                                   prevention=details.get('prevention', 'N/A'))
+                                   prevention=details.get('prevention', 'N/A'),
+                                   timestamp=timestamp)
     
     return render_template('index.html')
 

@@ -33,34 +33,75 @@
         {% if disease %}
         <div class="result-card">
             <h2>Prediction Results</h2>
+            
             <div class="result-header">
-                <div class="result-image">
-                    <img src="{{ image_url }}" alt="Uploaded Leaf">
+                <div class="disease-alert">
+                    <h3 class="disease-name">{{ disease }}</h3>
+                    <div class="confidence-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: {{ confidence_value }}%; background-color: {% if confidence_value >= 80 %}#4caf50{% elif confidence_value >= 60 %}#ff9800{% else %}#d32f2f{% endif %};"></div>
+                        </div>
+                        <p class="confidence-text">{{ confidence }}</p>
+                    </div>
                 </div>
-                <div class="result-summary">
-                    <p><strong>Disease:</strong> <span class="highlight">{{ disease }}</span></p>
-                    <p><strong>Prediction Confidence:</strong> {{ confidence }}</p>
-                    <p><strong>Model Accuracy:</strong> {{ accuracy }}</p>
+            </div>
+
+            <div class="model-info">
+                <div class="info-item">
+                    <span class="info-label">Model:</span> CNN (TensorFlow)
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Dataset:</span> PlantVillage (38K images)
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Overall Accuracy:</span> {{ accuracy }}
+                </div>
+            </div>
+
+            <div class="images-section">
+                <div class="image-container">
+                    <h4>Original Image</h4>
+                    <img src="{{ image_url }}" alt="Uploaded Leaf" class="leaf-image">
+                </div>
+                <div class="image-container">
+                    <h4>Preprocessed (224x224)</h4>
+                    <img src="{{ image_url }}" alt="Preprocessed Leaf" class="leaf-image preprocessed">
+                </div>
+            </div>
+
+            <div class="severity-section">
+                <div class="severity-badge {% if confidence_value >= 80 %}severe{% elif confidence_value >= 60 %}moderate{% else %}mild{% endif %}">
+                    <p class="severity-label">Severity Level</p>
+                    <p class="severity-value">{% if confidence_value >= 80 %}High{% elif confidence_value >= 60 %}Medium{% else %}Low{% endif %}</p>
+                </div>
+                <div class="recommendation">
+                    <p class="rec-title">Action Required</p>
+                    <p class="rec-text">{% if confidence_value >= 80 %}Immediate treatment recommended{% elif confidence_value >= 60 %}Monitor plant for next 7 days{% else %}Continue regular monitoring{% endif %}</p>
                 </div>
             </div>
 
             <div class="details-grid">
                 <div class="detail-box">
-                    <h3>🤒 Symptoms</h3>
+                    <h3>⚕️ Symptoms</h3>
                     <p>{{ symptoms }}</p>
                 </div>
                 <div class="detail-box">
-                    <h3>🦠 Causes</h3>
+                    <h3>🔬 Causes</h3>
                     <p>{{ causes }}</p>
                 </div>
                 <div class="detail-box">
-                    <h3>💊 Treatment</h3>
+                    <h3>💉 Treatment</h3>
                     <p>{{ treatment }}</p>
                 </div>
                 <div class="detail-box">
                     <h3>🛡️ Prevention</h3>
                     <p>{{ prevention }}</p>
                 </div>
+            </div>
+
+            <div class="footer-info">
+                <p>Prediction generated on: {{ timestamp }}</p>
+                <p>Platform: Flask + TensorFlow</p>
             </div>
         </div>
         {% endif %}
