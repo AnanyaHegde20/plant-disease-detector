@@ -10,10 +10,42 @@
 <body>
 
     <div class="container">
-        <div class="header-section">
-            <div class="logo-badge">🌿 AI-Powered Plant Diagnostics</div>
-            <h1>Plant Disease Detection</h1>
-            <p class="subtitle">Upload a photo of your plant's leaf to instantly identify potential diseases using our advanced machine learning model.</p>
+        <div class="header-wrapper">
+            <div class="header-section">
+                <div class="logo-badge">🌿 AI-Powered Plant Diagnostics</div>
+                <h1>Plant Disease Detection</h1>
+                <p class="subtitle">Upload a photo of your plant's leaf to instantly identify potential diseases using our advanced machine learning model.</p>
+            </div>
+            <button class="about-btn" onclick="toggleAbout()" title="About">ℹ️</button>
+        </div>
+
+        <div class="about-modal" id="aboutModal">
+            <div class="about-content">
+                <button class="close-btn" onclick="toggleAbout()">✕</button>
+                <h2>About This Project</h2>
+                <div class="about-details">
+                    <div class="about-item">
+                        <h3>Project Name</h3>
+                        <p>AI-Based Plant Disease Detection System</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>Technology Stack</h3>
+                        <p><strong>Backend:</strong> Flask, Python<br><strong>ML Framework:</strong> TensorFlow, Keras<br><strong>Frontend:</strong> HTML5, CSS3, JavaScript</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>Model Details</h3>
+                        <p><strong>Architecture:</strong> Convolutional Neural Network (CNN)<br><strong>Dataset:</strong> PlantVillage (38,000+ images)<br><strong>Classes:</strong> 3 disease types + Healthy<br><strong>Accuracy:</strong> 92.8% - 96.5%</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>Features</h3>
+                        <p>Image preprocessing (224x224 normalization) • Real-time prediction • Confidence scoring • Severity levels • Symptom analysis • Treatment recommendations • Prevention tips</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>Use Case</h3>
+                        <p>Helps farmers and plant enthusiasts quickly identify plant diseases and get immediate treatment guidance to protect crop health.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="card">
@@ -114,6 +146,18 @@
             reader.readAsDataURL(event.target.files[0]);
             document.getElementById('file-name').innerText = event.target.files[0].name;
         }
+
+        function toggleAbout() {
+            var modal = document.getElementById('aboutModal');
+            modal.classList.toggle('show');
+        }
+
+        window.addEventListener('click', function(event) {
+            var modal = document.getElementById('aboutModal');
+            if (event.target === modal) {
+                modal.classList.remove('show');
+            }
+        });
     </script>
 </body>
 </html>
