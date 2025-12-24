@@ -21,68 +21,68 @@
         </div>
     </header>
 
+    <div class="about-modal hidden" id="aboutPage">
+        <div class="about-page-content">
+            <h2>About The Project</h2>
+            <p class="about-intro">This application demonstrates the power of combining modern web technologies with machine learning to solve real-world agricultural problems.</p>
+            
+            <div class="about-features">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Deep Learning</h3>
+                    <p>Utilizes a Convolutional Neural Network (CNN) trained with TensorFlow/Keras to classify plant leaf diseases with high precision.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Data Driven</h3>
+                    <p>The model was trained on the PlantVillage dataset, focusing on tomato plants and their common diseases like Early Blight and Late Blight.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Real-Time Predictions</h3>
+                    <p>Get instant disease predictions with confidence scores in less than 1 second, enabling quick decision making for farmers.</p>
+                </div>
+            </div>
+
+            <div class="about-details">
+                <div class="about-item">
+                    <h3>Project Overview</h3>
+                    <p>An intelligent web-based system that leverages advanced machine learning to detect plant diseases from leaf images in seconds. This system provides accurate disease identification, confidence metrics, and actionable treatment recommendations to help farmers and gardeners protect their crops.</p>
+                </div>
+                <div class="about-item">
+                    <h3>Technology Stack</h3>
+                    <p><strong>Backend:</strong> Flask Web Framework with Python<br><strong>ML Framework:</strong> TensorFlow & Keras<br><strong>Frontend:</strong> HTML5, CSS3, JavaScript<br><strong>Model:</strong> Deep Convolutional Neural Network (CNN)<br><strong>Deployment:</strong> Replit Platform</p>
+                </div>
+                <div class="about-item">
+                    <h3>Machine Learning Model</h3>
+                    <p><strong>Architecture:</strong> Convolutional Neural Network (CNN)<br><strong>Training Dataset:</strong> PlantVillage Dataset (38,000+ annotated images)<br><strong>Disease Classes:</strong> Healthy, Powdery Mildew, Rust<br><strong>Input Size:</strong> 224x224 pixels (normalized)<br><strong>Accuracy Range:</strong> 92.8% - 96.5% per disease</p>
+                </div>
+                <div class="about-item">
+                    <h3>Key Features</h3>
+                    <p>✓ Real-time image processing & prediction<br>✓ Confidence scoring with visual progress bars<br>✓ Disease severity classification (High/Medium/Low)<br>✓ Detailed symptom analysis<br>✓ Treatment recommendations<br>✓ Prevention guidelines<br>✓ Model accuracy transparency<br>✓ Prediction timestamps</p>
+                </div>
+                <div class="about-item">
+                    <h3>How It Works</h3>
+                    <p>1. Upload a clear photo of a plant leaf<br>2. The system preprocesses the image (224x224 normalization)<br>3. CNN model analyzes the image<br>4. Returns disease prediction with confidence score<br>5. Displays detailed information including symptoms, causes, treatment, and prevention methods</p>
+                </div>
+                <div class="about-item">
+                    <h3>Real-World Applications</h3>
+                    <p><strong>For Farmers:</strong> Quick disease identification to minimize crop loss and optimize treatment timing<br><strong>For Gardeners:</strong> Easy plant health monitoring and care guidance<br><strong>For Agriculture Experts:</strong> Support tool for disease assessment and management decisions</p>
+                </div>
+                <div class="about-item">
+                    <h3>Model Performance</h3>
+                    <p><strong>Overall Accuracy:</strong> 92.8% - 96.5%<br><strong>Training Data:</strong> 38,000+ plant leaf images<br><strong>Inference Time:</strong> Less than 1 second<br><strong>Supported Formats:</strong> JPG, PNG<br><strong>Image Size Requirements:</strong> Any size (auto-resized to 224x224)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container" id="mainContent">
         <div class="header-wrapper">
             <div class="header-section">
                 <div class="logo-badge">🌿 AI-Powered Plant Diagnostics</div>
                 <h1>Plant Disease Detection</h1>
                 <p class="subtitle">Upload a photo of your plant's leaf to instantly identify potential diseases using our advanced machine learning model.</p>
-            </div>
-        </div>
-
-        <div class="about-modal hidden" id="aboutPage">
-            <div class="about-page-content">
-                <h2>About The Project</h2>
-                <p class="about-intro">This application demonstrates the power of combining modern web technologies with machine learning to solve real-world agricultural problems.</p>
-                
-                <div class="about-features">
-                    <div class="feature-card">
-                        <div class="feature-icon">🧠</div>
-                        <h3>Deep Learning</h3>
-                        <p>Utilizes a Convolutional Neural Network (CNN) trained with TensorFlow/Keras to classify plant leaf diseases with high precision.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Data Driven</h3>
-                        <p>The model was trained on the PlantVillage dataset, focusing on tomato plants and their common diseases like Early Blight and Late Blight.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h3>Real-Time Predictions</h3>
-                        <p>Get instant disease predictions with confidence scores in less than 1 second, enabling quick decision making for farmers.</p>
-                    </div>
-                </div>
-
-                <div class="about-details">
-                    <div class="about-item">
-                        <h3>Project Overview</h3>
-                        <p>An intelligent web-based system that leverages advanced machine learning to detect plant diseases from leaf images in seconds. This system provides accurate disease identification, confidence metrics, and actionable treatment recommendations to help farmers and gardeners protect their crops.</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Technology Stack</h3>
-                        <p><strong>Backend:</strong> Flask Web Framework with Python<br><strong>ML Framework:</strong> TensorFlow & Keras<br><strong>Frontend:</strong> HTML5, CSS3, JavaScript<br><strong>Model:</strong> Deep Convolutional Neural Network (CNN)<br><strong>Deployment:</strong> Replit Platform</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Machine Learning Model</h3>
-                        <p><strong>Architecture:</strong> Convolutional Neural Network (CNN)<br><strong>Training Dataset:</strong> PlantVillage Dataset (38,000+ annotated images)<br><strong>Disease Classes:</strong> Healthy, Powdery Mildew, Rust<br><strong>Input Size:</strong> 224x224 pixels (normalized)<br><strong>Accuracy Range:</strong> 92.8% - 96.5% per disease</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Key Features</h3>
-                        <p>✓ Real-time image processing & prediction<br>✓ Confidence scoring with visual progress bars<br>✓ Disease severity classification (High/Medium/Low)<br>✓ Detailed symptom analysis<br>✓ Treatment recommendations<br>✓ Prevention guidelines<br>✓ Model accuracy transparency<br>✓ Prediction timestamps</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>How It Works</h3>
-                        <p>1. Upload a clear photo of a plant leaf<br>2. The system preprocesses the image (224x224 normalization)<br>3. CNN model analyzes the image<br>4. Returns disease prediction with confidence score<br>5. Displays detailed information including symptoms, causes, treatment, and prevention methods</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Real-World Applications</h3>
-                        <p><strong>For Farmers:</strong> Quick disease identification to minimize crop loss and optimize treatment timing<br><strong>For Gardeners:</strong> Easy plant health monitoring and care guidance<br><strong>For Agriculture Experts:</strong> Support tool for disease assessment and management decisions</p>
-                    </div>
-                    <div class="about-item">
-                        <h3>Model Performance</h3>
-                        <p><strong>Overall Accuracy:</strong> 92.8% - 96.5%<br><strong>Training Data:</strong> 38,000+ plant leaf images<br><strong>Inference Time:</strong> Less than 1 second<br><strong>Supported Formats:</strong> JPG, PNG<br><strong>Image Size Requirements:</strong> Any size (auto-resized to 224x224)</p>
-                    </div>
-                </div>
             </div>
         </div>
 
