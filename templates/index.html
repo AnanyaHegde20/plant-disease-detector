@@ -21,7 +21,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container" id="mainContent">
         <div class="header-wrapper">
             <div class="header-section">
                 <div class="logo-badge">🌿 AI-Powered Plant Diagnostics</div>
@@ -30,10 +30,29 @@
             </div>
         </div>
 
-        <div class="about-modal" id="aboutModal">
-            <div class="about-content">
-                <button class="close-btn" onclick="toggleAbout()">✕</button>
-                <h2>About This Project</h2>
+        <div class="about-modal hidden" id="aboutPage">
+            <div class="about-page-content">
+                <h2>About The Project</h2>
+                <p class="about-intro">This application demonstrates the power of combining modern web technologies with machine learning to solve real-world agricultural problems.</p>
+                
+                <div class="about-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Deep Learning</h3>
+                        <p>Utilizes a Convolutional Neural Network (CNN) trained with TensorFlow/Keras to classify plant leaf diseases with high precision.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Data Driven</h3>
+                        <p>The model was trained on the PlantVillage dataset, focusing on tomato plants and their common diseases like Early Blight and Late Blight.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-Time Predictions</h3>
+                        <p>Get instant disease predictions with confidence scores in less than 1 second, enabling quick decision making for farmers.</p>
+                    </div>
+                </div>
+
                 <div class="about-details">
                     <div class="about-item">
                         <h3>Project Overview</h3>
@@ -67,7 +86,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" id="uploadCard">
             <form action="/" method="post" enctype="multipart/form-data">
                 <div class="upload-box">
                     <input type="file" name="file" id="file" accept="image/*" required onchange="previewImage(event)">
@@ -167,16 +186,12 @@
         }
 
         function toggleAbout() {
-            var modal = document.getElementById('aboutModal');
-            modal.classList.toggle('show');
+            var mainContent = document.getElementById('mainContent');
+            var aboutPage = document.getElementById('aboutPage');
+            
+            mainContent.classList.toggle('hidden');
+            aboutPage.classList.toggle('hidden');
         }
-
-        window.addEventListener('click', function(event) {
-            var modal = document.getElementById('aboutModal');
-            if (event.target === modal) {
-                modal.classList.remove('show');
-            }
-        });
     </script>
 </body>
 </html>
