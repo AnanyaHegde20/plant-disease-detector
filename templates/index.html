@@ -9,6 +9,19 @@
 </head>
 <body>
 
+    <header class="top-header">
+        <div class="header-content">
+            <div class="header-logo">
+                <span class="logo-icon">🌿</span>
+                <span class="logo-text">PlantDoctor</span>
+            </div>
+            <div class="header-nav">
+                <a href="#" class="header-link">Source</a>
+                <button class="header-link about-link" onclick="toggleAbout()">About</button>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
         <div class="header-wrapper">
             <div class="header-section">
@@ -16,7 +29,6 @@
                 <h1>Plant Disease Detection</h1>
                 <p class="subtitle">Upload a photo of your plant's leaf to instantly identify potential diseases using our advanced machine learning model.</p>
             </div>
-            <button class="about-btn" onclick="toggleAbout()" title="About">ℹ️</button>
         </div>
 
         <div class="about-modal" id="aboutModal">
