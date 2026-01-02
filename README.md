@@ -74,4 +74,8 @@ python app.py
 5️⃣ Open in Browser
 cpp
 Copy code
-http://127.0.0.1:5000
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> 80ded00 (Prepare project for Render deployment)
