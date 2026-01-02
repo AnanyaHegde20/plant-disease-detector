@@ -5,6 +5,10 @@ from flask import Flask, render_template, request
 from PIL import Image
 import tensorflow as tf
 from datetime import datetime
+import pytz
+
+# Set IST timezone
+ist = pytz.timezone('Asia/Kolkata')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
@@ -74,7 +78,7 @@ def index():
             
             disease_name, confidence = predict_disease(filepath)
             details = disease_info.get(disease_name, {})
-            timestamp = datetime.now().strftime("%d %b %Y, %H:%M:%S")
+            timestamp = datetime.now(ist).strftime("%d %b %Y, %H:%M:%S")
             
             return render_template('index.html', 
                                    image_url=filepath,
